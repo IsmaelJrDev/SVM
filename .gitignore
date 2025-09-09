@@ -1,0 +1,12 @@
+# Entornos virtuales
+graficacion/
+venv/
+.env/
+
+# Archivos de Jupyter
+*.ipynb_checkpoints
+
+# Archivos temporales
+*.pyc
+__pycache__/
+.DS_Store
