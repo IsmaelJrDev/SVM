@@ -27,7 +27,7 @@
         }
         function blancoYNegro(canvas){
             var ctx = canvas.getContext('2d');
-            var imgData = ctx.getInageData(0, 0, canvas.width, canvas.height)
+            var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
             var pixeles = imgData.data;
 
             console.log(imgData)
@@ -37,9 +37,17 @@
                 var verde = pixeles[p+1];
                 var azul = pixeles[p+2];
                 var alpha = pixeles[p+3];
+
+                var gris = (rojo + verde + azul) / 3;
+                // rojo: 50, verde:120, azul:230
+                //gris = (50 + 120 + 230) / 3 = 400 / 3 = 133.33
+
+                pixeles[p] = gris;
+                pixeles [p + 1] = gris;
+                pixeles [p + 2] = gris;
             }
+
+            ctx.putImageData(imgData, 0, 0);
         }
 
-    </script>
-</body>
-</html>
+    </script> 
