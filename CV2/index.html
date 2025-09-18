@@ -6,9 +6,8 @@
     <title>Sovel - CV</title>
 </head>
 <body>
-    <canvas id="canvas">
-
-    </canvas>
+    <canvas id="canvas"></canvas>
+    <canvas id="resultado"></canvas>
     <script type= "text/javascript">
         var image = new Image();
         image.onload = imageLoaded;
@@ -24,6 +23,9 @@
             ctx.drawImage(image, 0, 0, image.width, image.height);
 
             blancoYNegro (canvas);
+
+            var resultado = document.getElementById('resultado')
+            convolucionar(canvas, resultado);
         }
         function blancoYNegro(canvas){
             var ctx = canvas.getContext('2d');
@@ -49,5 +51,10 @@
 
             ctx.putImageData(imgData, 0, 0);
         }
+        function convolucionar(canvasFuente, canvasDestino){
+            var ctxFuente 
+        }
 
-    </script> 
+    </script>
+</body>
+</html>
